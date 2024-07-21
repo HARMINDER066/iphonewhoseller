@@ -6,7 +6,7 @@
             <!-- Shop-control-bar Title -->
             <div class="d-block d-md-flex flex-center-between mb-3">
                 <h3 class="font-size-25 mb-2 mb-md-0">Phone</h3>
-                <p class="font-size-14 text-gray-90 mb-0">Showing {{ $products->count() }} results</p>
+                <p class="font-size-14 text-light-gray mb-0">Showing {{ $products->count() }} results</p>
             </div>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade pt-2 active show" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab" data-target-group="groups">

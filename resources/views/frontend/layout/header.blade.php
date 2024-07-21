@@ -14,7 +14,8 @@
                                 <nav class="navbar navbar-expand u-header__navbar py-0 justify-content-xl-between max-width-270 min-width-270">
                                     <!-- Logo -->
                                     <a class="order-1 order-xl-0 navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="{{route('home')}}" aria-label="Electro">
-                                        <img src="{{ asset('logo.svg') }}">
+                                        <img class="d-none d-xl-inline" src="{{ asset('logo.svg') }}">
+                                        <img class="d-xl-none" src="{{ asset('logo-light.svg') }}">
                                     </a>
                                     <!-- End Logo -->
 
@@ -56,7 +57,7 @@
                                     <ul class="d-flex list-unstyled mb-0 align-items-center">
                                         <!-- Search -->
                                         <li class="col d-xl-none px-2 px-sm-3 position-static">
-                                            <a id="searchClassicInvoker" class="font-size-22 text-gray-90 text-lh-1 btn-text-secondary" href="javascript:;" role="button"
+                                            <a id="searchClassicInvoker" class="font-size-22 text-light-gray text-lh-1 btn-text-secondary" href="javascript:;" role="button"
                                                 data-toggle="tooltip"
                                                 data-placement="top"
                                                 title="Search"
@@ -107,15 +108,15 @@
                                     <!-- Card -->
                                     <div class="card border-0">
                                         <div class="card-header card-collapse border-0" id="basicsHeadingOne">
-                                            <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-gray-90"
+                                            <button type="button" class="btn-link btn-remove-focus btn-block d-flex card-btn py-3 text-lh-1 px-4 shadow-none btn-primary rounded-top-lg border-0 font-weight-bold text-light-gray"
                                                 data-toggle="collapse"
                                                 data-target="#basicsCollapseOne"
                                                 aria-expanded="true"
                                                 aria-controls="basicsCollapseOne">
-                                                <span class="ml-0 text-gray-90 mr-2">
+                                                <span class="ml-0 text-light-gray mr-2">
                                                     <span class="fa fa-list-ul"></span>
                                                 </span>
-                                                <span class="pl-1 text-gray-90">Category</span>
+                                                <span class="pl-1 text-light-gray">Category</span>
                                             </button>
                                         </div>
                                         <div id="basicsCollapseOne" class="collapse show vertical-menu"

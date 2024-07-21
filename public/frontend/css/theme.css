@@ -3123,7 +3123,8 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #1e2022;
+  /* color: #1e2022; */
+  color: #ffffff;
   background-color: #4a5560;
   border-color: #4a5560;
 }
@@ -35222,11 +35223,11 @@ blockquote:not(.blockquote) p {
   color: #334141;
 }
 
-.text-gray-90 {
+.text-light-gray {
   color: #333e48;
 }
 
-.text-gray-90[href]:hover {
+.text-light-gray[href]:hover {
   color: #333e48;
 }
 
@@ -35300,6 +35301,10 @@ blockquote:not(.blockquote) p {
 
 .hover-on-dark:hover {
   color: #333e48 !important;
+}
+
+.text-light-gray {
+  color: #E0E0E0;
 }
 
 /*------------------------------------

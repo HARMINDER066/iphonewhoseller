@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <!-- Single Product Body -->
-    <div class="mb-xl-14 mb-6" id="rendeer-details">
+    <div class="mb-xl-14 my-6" id="rendeer-details">
         <div class="row">
             <div class="col-md-5 mb-4 mb-md-0">
                 <div id="sliderSyncingNav" class="js-slick-carousel u-slick mb-2" data-infinite="true" data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle" data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left ml-lg-2 ml-xl-4" data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right mr-lg-2 mr-xl-4" data-nav-for="#sliderSyncingThumb">
@@ -56,9 +56,12 @@
                         </button>
                         @endforeach
                     </div>
-                    <div class="d-md-flex align-items-end my-3">
+                    <div class="d-md-flex align-items-end my-5">
                         <div class="ml-md-3">
-                            <a href="https://wa.me/1234567890" target="_blank" class="btn px-5 btn-primary-dark transition-3d-hover"><i class="ec ec-add-to-cart mr-2 font-size-20"></i> Whatsapp Chat to Buy</a>
+                            <a href="https://wa.me/1234567890" target="_blank" class="btn px-5 btn-primary-dark transition-3d-hover"><i class="fab fa-whatsapp mr-2 font-size-20"></i> Chat</a>
+                        </div>
+                        <div class="ml-md-3">
+                            <a href="tel:1234567890" target="_blank" class="btn px-5 btn-primary-dark transition-3d-hover"><i class="fas fa-phone-alt mr-2 font-size-20"></i> Call</a>
                         </div>
                     </div>
                 </div>
