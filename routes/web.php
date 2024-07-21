@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\FrontController;
+ use App\Http\Controllers\backendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,12 @@ Route::get('/', [FrontController::class, 'home'])->name('home');
 // Route::get('/send-msg-request', [ApiController::class, 'sendSMS']);
 
 
+Route::prefix('admin')->group(function () {
+    Route::get('products', [backendController::class, 'list'])->name('product.list');
+     Route::get('products/create', [backendController::class, 'create'])->name('product.create');
+     Route::post('/products/store', [backendController::class, 'store'])->name('products.store');
+     // Route::get('products/{product}', [backendController::class, 'show'])->name('product.show');
+    Route::get('products/{product}/edit', [backendController::class, 'edit'])->name('product.edit');
+    // Route::put('products/{product}', [backendController::class, 'update'])->name('product.update');
+    Route::delete('products/{product}', [backendController::class, 'destroy'])->name('product.destroy');
+});
