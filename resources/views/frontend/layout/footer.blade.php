@@ -95,13 +95,13 @@
                             <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Laptops & Computers</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Cameras & Photography</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Smart Phones & Tablets</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Video Games & Consoles</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">TV & Audio</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Gadgets</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Car Electronic & GPS</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Laptops & Computers</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Cameras & Photography</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Smart Phones & Tablets</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Video Games & Consoles</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">TV & Audio</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Gadgets</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Car Electronic & GPS</a></li>
                             </ul>
                             <!-- End List Group -->
                         </div>
@@ -109,11 +109,11 @@
                         <div class="col-12 col-md mb-4 mb-md-0">
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6">
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Printers & Ink</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Software</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Office Supplies</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Computer Components</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Accesories</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Printers & Ink</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Software</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Office Supplies</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Computer Components</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Accesories</a></li>
                             </ul>
                             <!-- End List Group -->
                         </div>
@@ -122,9 +122,9 @@
                             <h6 class="mb-3 font-weight-bold">Customer Care</h6>
                             <!-- List Group -->
                             <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/my-account.html">My Account</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/track-your-order.html">Order Tracking</a></li>
-                                <li><a class="list-group-item list-group-item-action" href="https://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html">Wish List</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/my-account.html">My Account</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/track-your-order.html">Order Tracking</a></li>
+                                <li><a class="list-group-item list-group-item-action" href="/electro-html/2.0/html/shop/wishlist.html">Wish List</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="terms-and-conditions.html">Customer Service</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="terms-and-conditions.html">Returns / Exchange</a></li>
                                 <li><a class="list-group-item list-group-item-action" href="faq.html">FAQs</a></li>

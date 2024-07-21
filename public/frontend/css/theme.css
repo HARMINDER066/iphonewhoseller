@@ -20885,7 +20885,7 @@ button:focus {
 .u-header__navbar-brand > img {
   padding-top: 0;
   padding-bottom: 0;
-  width: 9.375rem;
+  width: 14rem;
 }
 
 .u-header__navbar-brand-center {
@@ -30643,7 +30643,7 @@ label.btn {
 ------------------------------------*/
 .svg-preloader {
   z-index: -1;
-  background: transparent url(https://transvelo.github.io/electro-html/2.0/assets/svg/preloaders/circle-preloader.svg) center no-repeat !important;
+  background: transparent url(/electro-html/2.0/assets/svg/preloaders/circle-preloader.svg) center no-repeat !important;
   overflow: hidden;
   transition: all 0.4s ease-in;
 }
@@ -32751,7 +32751,7 @@ label.btn {
 }
 
 .u-slick {
-  background: url(https://transvelo.github.io/electro-html/2.0/assets/svg/preloaders/circle-preloader.svg) no-repeat 50% 50%;
+  background: url(/electro-html/2.0/assets/svg/preloaders/circle-preloader.svg) no-repeat 50% 50%;
 }
 
 .u-slick .js-next,
@@ -33113,13 +33113,13 @@ blockquote:not(.blockquote) p {
 /* Navbar Brand */
 .u-header__navbar-brand,
 .u-header__navbar-brand > img {
-  width: 6.375rem;
+  width: 10rem;
 }
 
 @media (min-width: 1200px) {
   .u-header__navbar-brand,
   .u-header__navbar-brand > img {
-    width: 9.375rem;
+    width: 14rem;
   }
 }
 
