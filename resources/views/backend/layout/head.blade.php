@@ -7,35 +7,14 @@
     <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
     <title>Riho - Premium Admin Template</title>
-    <!-- Google font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/font-awesome.css') }}">
-    <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/icofont.css') }}">
-    <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/themify.css') }}">
-    <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/flag-icon.css') }}">
-    <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/feather-icon.css') }}">
-    <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/slick-theme.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/scrollbar.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/date-picker.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/dropzone.css') }}">
-    <!-- Plugins css Ends-->
-    <!-- Bootstrap css-->
+    
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/bootstrap.css') }}">
     <!-- App css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/style.css') }}">
-    <link id="color" rel="stylesheet" href="{{ asset('backend/css/color-1.css" media="screen') }}">
     <!-- Responsive css-->
+     
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/responsive.css') }}">
 @stack('css')
 

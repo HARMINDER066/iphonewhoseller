@@ -5,7 +5,7 @@
     <div class="page-title">
       <div class="row">
         <div class="col-6">
-          <h4>Add Product</h4>
+          <h4>Edit Product</h4>
         </div>
         <div class="col-6">
           <ol class="breadcrumb">
@@ -14,7 +14,7 @@
                   <use href="../assets/svg/icon-sprite.svg#stroke-home"></use>
                 </svg></a></li>
             <li class="breadcrumb-item">ECommerce</li>
-            <li class="breadcrumb-item active">Add Product</li>
+            <li class="breadcrumb-item active">Edit Product</li>
           </ol>
         </div>
       </div>
@@ -31,7 +31,7 @@
           <div class="card-body">
             <div class="row g-xl-5 g-3">
               <div class="col-xxl-3 col-xl-4 box-col-4e sidebar-left-wrapper">
-                <ul class="sidebar-left-icons nav nav-pills" id="add-product-pills-tab" role="tablist">
+                <ul class="sidebar-left-icons nav nav-pills" id="edit-product-pills-tab" role="tablist">
                   <li class="nav-item" role="presentation"> <a class="nav-link" id="detail-product-tab" data-bs-toggle="pill" href="#detail-product" role="tab" aria-controls="detail-product" aria-selected="false" tabindex="-1">
                       <div class="nav-rounded">
                         <div class="product-icons">
@@ -42,13 +42,13 @@
                       </div>
                       <div class="product-tab-content">
                         <h6>Home</h6>
-                        <p>Add details</p>
+                        <p>Edit Product  details</p>
                       </div>
                     </a></li>
                 </ul>
               </div>
               <div class="col-xxl-9 col-xl-8 box-col-8 position-relative">
-                <div class="tab-content" id="add-product-pills-tabContent">
+                <div class="tab-content" id="edit-product-pills-tabContent">
                   <div class="tab-pane fade active show" id="detail-product" role="tabpanel" aria-labelledby="detail-product-tab">
                     <div class="sidebar-body">
                       @if($errors->any())
@@ -60,11 +60,12 @@
                           </ul>
                         </div>
                       @endif
-                      <form class="row g-2" action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" id="product-form">
+                      <form class="row g-2" action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data" id="product-form">
                         @csrf
+                        @method('PUT')
                         <label class="form-label col-12 m-0" for="productTitle1">Product Title <span class="txt-danger"> *</span></label>
                         <div class="col-12 custom-input">
-                          <input class="form-control @error('name') is-invalid @enderror" id="productTitle1" type="text" name="name" value="{{ old('name') }}" required>
+                          <input class="form-control @error('name') is-invalid @enderror" id="productTitle1" type="text" name="name" value="{{ old('name', $product->name) }}" required>
                           @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                           @enderror
@@ -72,12 +73,12 @@
                         <div class="col-12">
                           <div id="editordescriotion" class="ql-container ql-snow" style="height:150px">
                             <div class="ql-editor ql-blank" contenteditable="true" data-placeholder="Enter your messages...">
-                              <p><br></p>
+                              {!! old('description', $product->description) !!}
                             </div>
                             <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
                             <div class="ql-tooltip ql-hidden"><a class="ql-preview" target="_blank" href="about:blank"></a><input type="text" data-formula="e=mc^2" data-link="quilljs.com" data-video="Embed URL"><a class="ql-action"></a><a class="ql-remove"></a></div>
                           </div>
-                          <textarea name="description" id="description" style="display:none;">{{ old('description') }}</textarea>
+                          <textarea name="description" id="description" style="display:none;">{{ old('description', $product->description) }}</textarea>
                           @error('description')
                             <div class="invalid-feedback d-block">{{ $message }}</div>
                           @enderror
@@ -85,11 +86,22 @@
                         <div class="product-upload">
                           <label class="form-label col-12 m-0" for="productTitle1">Product Images <span class="txt-danger"> *</span></label>
                           <div class="dz-message needsclick">
-                            <input class="form-control @error('images') is-invalid @enderror" id="productTitle1" type="file" name="images[]" multiple required>
+                            <input class="form-control @error('images') is-invalid @enderror" id="productTitle1" type="file" name="images[]" multiple>
                             <div class="valid-feedback">Select multiple images accept.</div>
                             @error('images')
                               <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
+                          </div>
+                          <div class="mt-3">
+                            <p>Current Images:</p>
+                            <div id="current-images">
+                              @foreach(json_decode($product->images, true) as $image)
+                                <div class="image-item" data-image="{{ $image }}">
+                                  <img src="{{ asset('product/' . $image) }}" alt="{{ $product->name }}" width="50">
+                                  <button type="button" class="btn btn-danger btn-sm remove-image">&times;</button>
+                                </div>
+                              @endforeach
+                            </div>
                           </div>
                         </div>
                         <div class="row g-lg-4 g-3">
@@ -103,8 +115,8 @@
                                   <div class="col-12">
                                     <select class="form-select @error('category') is-invalid @enderror" name="category" id="validationDefault04" required>
                                       <option selected value="">Please select</option>
-                                      <option value="phone" {{ old('category') == 'phone' ? 'selected' : '' }}>Phone</option>
-                                      <option value="speaker" {{ old('category') == 'speaker' ? 'selected' : '' }}>Speaker</option>
+                                      <option value="phone" {{ old('category', $product->category) == 'phone' ? 'selected' : '' }}>Phone</option>
+                                      <option value="speaker" {{ old('category', $product->category) == 'speaker' ? 'selected' : '' }}>Speaker</option>
                                     </select>
                                     @error('category')
                                       <div class="invalid-feedback">{{ $message }}</div>
@@ -154,7 +166,7 @@
                                     <label class="form-label m-0" for="price">Price</label>
                                   </div>
                                   <div class="col-12">
-                                    <input class="form-control @error('price') is-invalid @enderror" id="price" type="number" name="price" value="{{ old('price') }}" required>
+                                    <input class="form-control @error('price') is-invalid @enderror" id="price" type="number" name="price" value="{{ old('price', $product->price) }}" required>
                                     @error('price')
                                       <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -167,7 +179,7 @@
                                     <label class="form-label m-0" for="discount_price">Discount Price</label>
                                   </div>
                                   <div class="col-12">
-                                    <input class="form-control @error('discount_price') is-invalid @enderror" id="discount_price" type="number" name="discount_price" value="{{ old('discount_price') }}">
+                                    <input class="form-control @error('discount_price') is-invalid @enderror" id="discount_price" type="number" name="discount_price" value="{{ old('discount_price', $product->discount_price) }}">
                                     @error('discount_price')
                                       <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -178,8 +190,9 @@
                           </div>
                         </div>
                         <div class="product-buttons">
-                          <button class="btn btn-primary" type="submit" data-bs-toggle="tooltip" data-bs-original-title="btn btn-primary" style="color:white">Save</button>
+                          <button class="btn btn-primary" type="submit" data-bs-toggle="tooltip" data-bs-original-title="btn btn-primary" style="color:white">Update</button>
                         </div>
+                        <input type="hidden" name="removed_images" id="removed_images" value="">
                       </form>
                     </div>
                   </div>
@@ -203,7 +216,7 @@
         speaker: ['JBL', 'Bose', 'Sony']
     };
 
-    const iphoneModels = ['Pro', 'Max', 'Air'];
+    const iphoneModels = ['iPhone Pro', 'iPhone Max', 'iPhone Air'];
 
     $('#validationDefault04').on('change', function() {
         const selectedCategory = $(this).val();
@@ -240,12 +253,32 @@
         }
     });
 
-    // Trigger change event to reflect the initial selection if needed
-    $('#validationDefault04').trigger('change');
+    // Set the initial values for the form fields
+    const initialCategory = "{{ old('category', $product->category) }}";
+    const initialParentCategory = "{{ old('parent_category', $product->parent_category) }}";
+    const initialModel = "{{ old('model', $product->model) }}";
+
+    if (initialCategory) {
+        $('#validationDefault04').val(initialCategory).trigger('change');
+        $('#producttype').val(initialParentCategory);
+        if (initialCategory === 'phone') {
+            $('#productmodal').val(initialModel);
+            $('#product_modal_div').show();
+        }
+    }
 
     // Copy the content from the Quill editor to the textarea before form submission
     $('#product-form').on('submit', function() {
         $('#description').val(quill.root.innerHTML);
+    });
+
+    // Handle remove image button click
+    $(document).on('click', '.remove-image', function() {
+        const image = $(this).closest('.image-item').data('image');
+        const removedImages = $('#removed_images').val() ? $('#removed_images').val().split(',') : [];
+        removedImages.push(image);
+        $('#removed_images').val(removedImages.join(','));
+        $(this).closest('.image-item').remove();
     });
 
   });

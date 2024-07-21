@@ -13,7 +13,7 @@
                 <svg class="stroke-icon">
                   <use href="../assets/svg/icon-sprite.svg#stroke-home"></use>
                 </svg></a></li>
-            <li class="breadcrumb-item">ECommerce </li>
+            <li class="breadcrumb-item">Home </li>
             <li class="breadcrumb-item active">Product list</li>
           </ol>
         </div>
@@ -48,7 +48,7 @@
                       <tr data-index="{{ $loop->index }}">
                         <td>
                           <div class="form-check">
-                            <input class="form-check-input checkbox-primary" type="checkbox">
+                           
                           </div>
                         </td>
                         <td>
@@ -69,17 +69,15 @@
                           <p class="f-light">{{ number_format($product->price, 2) }}</p>
                         </td>
                         <td>
-                          <div class="product-action"><a href="{{ route('product.edit', $product->id) }}">
-                              <svg>
-                                <use href="../assets/svg/icon-sprite.svg#edit-content"></use>
-                              </svg></a>
-                            <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display:inline;">
+                          <div class="product-action">
+                            <a href="{{ route('products.edit', $product->id) }}">
+                              <i class="fa-solid fa-pencil"></i>
+                            </a>
+                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
                               @csrf
                               @method('DELETE')
                               <button type="submit" style="background:none; border:none;">
-                                <svg>
-                                  <use href="../assets/svg/icon-sprite.svg#trash1"></use>
-                                </svg>
+                                <i class="fa-solid fa-trash"></i>
                               </button>
                             </form>
                           </div>

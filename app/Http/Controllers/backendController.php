@@ -51,7 +51,7 @@ class backendController extends Controller
         $product->images = json_encode($images);
         $product->save();
 
-        return redirect()->back()->with('success', 'Product added successfully!');
+        return redirect()->route('products.list')->with('success', 'Product added successfully!');
     }
     // public function show(Product $product)
     // {
@@ -60,26 +60,51 @@ class backendController extends Controller
 
     public function edit(Product $product)
     {
-        //return view('backend.edit-product', compact('product'));
+        return view('backend.product-edit', compact('product'));
     }
 
-    // public function update(Request $request, Product $product)
-    // {
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'category' => 'required',
-    //         'price' => 'required|numeric',
-    //         'image_url' => 'required|url',
-    //     ]);
+    public function update(Request $request, Product $product)
+{
+    $request->validate([
+        'name' => 'required',
+        'description' => 'required',
+        'category' => 'required',
+        'parent_category' => 'required',
+        'price' => 'required|numeric',
+        'discount_price' => 'nullable|numeric',
+        'images' => 'sometimes|array',
+        'images.*' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'model' => 'nullable|string',
+    ]);
+    $product->update([
+        'name' => $request->name,
+        'description' => $request->description,
+        'category' => $request->category,
+        'parent_category' => $request->parent_category,
+        'price' => $request->price,
+        'discount_price' => $request->discount_price,
+        'model' => $request->model,
+    ]);
+    $existingImages = json_decode($product->images, true) ?? [];
+    $removedImages = $request->removed_images ? explode(',', $request->removed_images) : [];
+    $remainingImages = array_values(array_diff($existingImages, $removedImages));    
+    if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('product'), $imageName);
+            $remainingImages[] = $imageName;
+        }
+    }
+    $product->images = json_encode($remainingImages);
+    $product->save();
 
-    //     $product->update($request->all());
+     return redirect()->route('products.list')->with('success', 'Product added successfully!');
+}
 
-    //     return redirect()->route('product.list')->with('success', 'Product updated successfully.');
-    // }
 
     public function destroy(Product $product)
     {
         $product->delete();
-       // return redirect()->route('product.list')->with('success', 'Product deleted successfully.');
+        return redirect()->route('products.list')->with('success', 'Product deleted successfully.');
     }
 }

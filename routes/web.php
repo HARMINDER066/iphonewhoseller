@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
  use App\Http\Controllers\FrontController;
  use App\Http\Controllers\backendController;
+ use App\Http\Controllers\AdminController;
+ use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +28,25 @@ Route::get('/', [FrontController::class, 'home'])->name('home');
 
 
 Route::prefix('admin')->group(function () {
-    Route::get('products', [backendController::class, 'list'])->name('product.list');
-     Route::get('products/create', [backendController::class, 'create'])->name('product.create');
+    
+});
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('login', [AdminController::class, 'login'])->name('admin.login');
+
+    Route::middleware('auth:admin')->group(function () {
+        Route::get('products', [backendController::class, 'list'])->name('products.list');
+     Route::get('products/create', [backendController::class, 'create'])->name('products.create');
      Route::post('/products/store', [backendController::class, 'store'])->name('products.store');
-     // Route::get('products/{product}', [backendController::class, 'show'])->name('product.show');
-    Route::get('products/{product}/edit', [backendController::class, 'edit'])->name('product.edit');
-    // Route::put('products/{product}', [backendController::class, 'update'])->name('product.update');
-    Route::delete('products/{product}', [backendController::class, 'destroy'])->name('product.destroy');
+    Route::get('products/{product}/edit', [backendController::class, 'edit'])->name('products.edit');
+    Route::put('products/{product}', [backendController::class, 'update'])->name('products.update');
+    Route::delete('products/{product}', [backendController::class, 'destroy'])->name('products.destroy');
+    Route::get('profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::post('profile', [ProfileController::class, 'updateProfile'])->name('admin.profile.update');
+    Route::post('profile/password', [ProfileController::class, 'updatePassword'])->name('admin.profile.updatePassword');
+    Route::post('logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+    });
 });
