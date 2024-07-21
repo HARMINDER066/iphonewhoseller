@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 dd($guards);
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
+            if (Auth::check() && Auth::guard($guard)->check()) {
                 if ($guard === 'admin') {
                     return redirect()->route('products.list');
                 }

@@ -68,10 +68,10 @@
                     </a>
                     <ul class="sidebar-submenu" style="">
                       <li>
-                        <a href="add-products.html">Add Products</a>
+                        <a href="{{ route('products.list') }}">Add Products</a>
                       </li>
                       <li>
-                        <a href="list-products.html">Product list</a>
+                        <a href="{{ route('products.create') }}">Product list</a>
                       </li>
                     </ul>
                   </li>
@@ -79,21 +79,11 @@
               </div>
             </div>
           </div>
-          <div class="simplebar-placeholder" style="width: auto; height: 2488px;"></div>
         </div>
-        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
-          <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
-        </div>
-        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
-          <div class="simplebar-scrollbar" style="height: 34px; display: block; transform: translate3d(0px, 11px, 0px);"></div>
-        </div>
+        
+        
       </ul>
-      <div class="right-arrow" id="right-arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </div>
+      
     </div>
   </nav>
 </div>

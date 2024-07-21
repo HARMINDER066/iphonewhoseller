@@ -11,9 +11,8 @@
         <div class="login-card login-dark">
           <div>
             <div>
-              <a class="logo" href="{{ route('admin.login') }}">
-                <img class="img-fluid for-dark" src="../assets/images/logo/logo.png" alt="loginpage">
-                <img class="img-fluid for-light" src="../assets/images/logo/logo_dark.png" alt="loginpage">
+              <a class="logo" href="{{ route('home') }}">
+              <img src="{{ asset('logo.svg') }}">
               </a>
             </div>
             <div class="login-main"> 
