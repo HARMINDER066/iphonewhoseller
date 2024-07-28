@@ -39,8 +39,8 @@
                                             <select class="js-select selectpicker dropdown-select custom-search-categories-select"
                                                 data-style="btn height-40 text-gray-60 font-weight-normal border-top border-bottom border-left-0 rounded-0 border-primary border-width-2 pl-0 pr-5 py-2">
                                                 <option value="one" selected>All Categories</option>
-                                                <option value="two">Phone</option>
-                                                <option value="three">Speaker</option>
+                                                <option value="two"><a href="{{ route('category', ['type' => 'phone']) }}">Phone</a></option>
+                                                <option value="three"><a href="{{ route('category', ['type' => 'phone']) }}">Speaker</a></option>
                                             </select>
                                             <!-- End Select -->
                                             <button class="btn btn-primary height-40 py-2 px-3 rounded-right-pill" type="button" id="searchProduct1">
@@ -123,23 +123,19 @@
                                             aria-labelledby="basicsHeadingOne"
                                             data-parent="#basicsAccordion">
                                             <div class="card-body p-0">
-                                                <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
-                                                    <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
-                                                        <ul class="navbar-nav u-header__navbar-nav">
-                                                            <li class="nav-item u-header__nav-item"
-                                                                data-event="hover"
-                                                                data-position="left">
-                                                                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Phone</a>
-                                                            </li>
-                                                            <li class="nav-item u-header__nav-item"
-                                                                data-event="hover"
-                                                                data-position="left">
-                                                                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Speaker</a>
-                                                            </li>
-                                                           
-                                                        </ul>
-                                                    </div>
-                                                </nav>
+                                            <nav class="js-mega-menu navbar navbar-expand-xl u-header__navbar u-header__navbar--no-space hs-menu-initialized">
+    <div id="navBar" class="collapse navbar-collapse u-header__navbar-collapse">
+        <ul class="navbar-nav u-header__navbar-nav">
+            <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
+                <a href="{{ route('category', ['type' => 'phone']) }}" class="nav-link u-header__nav-link font-weight-bold">Phone</a>
+            </li>
+            <li class="nav-item u-header__nav-item" data-event="hover" data-position="left">
+                <a href="{{ route('category', ['type' => 'speaker']) }}" class="nav-link u-header__nav-link font-weight-bold">Speaker</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
                                             </div>
                                         </div>
                                     </div>
@@ -163,7 +159,7 @@
                                             data-animation-in="slideInUp"
                                             data-animation-out="fadeOut"
                                             data-position="left">
-                                            <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle text-sale" href="javascript:;" aria-haspopup="true" aria-expanded="false">Phone</a>
+                                            <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle text-sale" href="{{ route('category', ['type' => 'phone']) }" aria-haspopup="true" aria-expanded="false">Phone</a>
 
                                         </li>
 
@@ -172,7 +168,7 @@
                                             data-animation-in="slideInUp"
                                             data-animation-out="fadeOut"
                                             data-position="left">
-                                            <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle text-sale" href="javascript:;" aria-haspopup="true" aria-expanded="false">Speaker</a>
+                                            <a id="homeMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle text-sale" href="{{ route('category', ['type' => 'speaker']) }" aria-haspopup="true" aria-expanded="false">Speaker</a>
 
                                         </li>
                                         <!-- End Home -->
