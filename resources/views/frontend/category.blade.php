@@ -17,16 +17,16 @@
                                 <div class="product-item__inner px-xl-4 p-3">
                                     <div class="product-item__body pb-xl-2">
                                         <div class="mb-2">
-                                            <a href="#" class="font-size-12 text-gray-5">{{ $product->category }}</a>
+                                            <a href="/product-detail/{{$product->id}}" class="font-size-12 text-gray-5">{{ $product->category }}</a>
                                         </div>
                                         <h5 class="mb-1 product-item__title">
-                                            <a href="#" class="text-blue font-weight-bold">{{ $product->name }}</a>
+                                            <a href="/product-detail/{{$product->id}}" class="text-blue font-weight-bold">{{ $product->name }}</a>
                                         </h5>
                                         <div class="mb-2">
                                             @php
                                                 $images = json_decode($product->images, true);
                                             @endphp
-                                            <a href="#" class="d-block text-center">
+                                            <a href="/product-detail/{{$product->id}}" class="d-block text-center">
                                                 <img class="img-fluid" src="{{ asset('product/' . $images[0]) }}" alt="{{ $product->name }}">
                                             </a>
                                         </div>
@@ -40,7 +40,7 @@
                                                 @endif
                                             </div>
                                             <div class="d-none d-xl-block prodcut-add-cart">
-                                                <a href="#" class="btn-add-cart btn-primary transition-3d-hover">
+                                                <a href="" class="btn-add-cart btn-primary transition-3d-hover">
                                                     <i class="ec ec-add-to-cart"></i>
                                                 </a>
                                             </div>

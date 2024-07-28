@@ -17,6 +17,7 @@ class Product extends Model
         'category',
         'parent_category',
         'images',
+        'specifications',
         'created_at',
         'updated_at'
     ];

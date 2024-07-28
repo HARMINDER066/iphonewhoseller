@@ -177,6 +177,18 @@
                             </div>
                           </div>
                         </div>
+                        <!-- Specifications Section -->
+                        @foreach ($specSections as $section => $fields)
+                          <h3>{{ $section }}</h3>
+                          @foreach ($fields as $field)
+                              <div class="form-group">
+                                  <label for="specifications[{{ $section }}][{{ $field }}]">{{ $field }}</label>
+                                  <input type="text" class="form-control" id="specifications[{{ $section }}][{{ $field }}]" name="specifications[{{ $section }}][{{ $field }}]" value="{{ old('specifications.'.$section.'.'.$field) }}" required>
+                              </div>
+                          @endforeach
+                        @endforeach
+
+                      
                         <div class="product-buttons">
                           <button class="btn btn-primary" type="submit" data-bs-toggle="tooltip" data-bs-original-title="btn btn-primary" style="color:white">Save</button>
                         </div>

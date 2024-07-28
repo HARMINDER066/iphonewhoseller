@@ -1,5 +1,12 @@
 @extends('frontend.app')
-@section('content')
+@push('css')
+<style>
+    img{
+        width:100%;
+    }
+    </style>
+    @endpush
+    @section('content')
 <div class="container">
     <!-- Single Product Body -->
     <div class="mb-xl-14 my-6" id="rendeer-details">
@@ -33,7 +40,6 @@
                             <a href="#" class="max-width-150 ml-n2 mb-2 mb-md-0 d-block"><img class="img-fluid" src="{{ asset('product/' . $images[0]) }}" alt="{{ $product->name }}"></a>
                         </div>
                     </div>
-                    <p>{{ $product->description }}</p>
                     <div class="mb-4">
                         <div class="d-flex align-items-baseline">
                             @if($product->discount_price)
@@ -67,6 +73,50 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-5">
+        <div class="col-md-6">
+                <h4>Specifications</h4>
+                @php
+    $specifications = json_decode($product->specifications, true);
+@endphp
+
+@if($specifications)
+    <div class="accordion" id="accordionExample">
+        @foreach($specifications as $section => $fields)
+            <div class="card mb-3">
+                <div class="card-header" id="heading{{ $loop->index }}" style="background: #465560;">
+                    <h2 class="mb-0" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="{{ $loop->first ? 'true' : 'false' }}" aria-controls="collapse{{ $loop->index }}">
+                        <button class="btn btn-link collapsed" style="color:#ffffff">
+                            {{ $section }}
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapse{{ $loop->index }}" class="collapse show" aria-labelledby="heading{{ $loop->index }}" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                                @foreach($fields as $field => $value)
+                                    <tr>
+                                        <td>{{ $field }}</td>
+                                        <td>{{ $value }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+@else
+    <p>No specifications available for this product.</p>
+@endif
+            </div>
+            <div class="col-md-6">
+                {!! $product->description !!}
+            </div>
+        </div>
+       
     </div>
     <!-- End Brand Carousel -->
 </div>
@@ -75,7 +125,9 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-        // initializeSlick();
+        $('.collapse').collapse('show');
+        // Initialize slick carousel
+        // $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
 
         // Handle modal button click
         $(document).on('click', '.modal-button', function() {
@@ -92,6 +144,8 @@
                 }
             });
         });
+
+       
     });
 </script>
 @endpush

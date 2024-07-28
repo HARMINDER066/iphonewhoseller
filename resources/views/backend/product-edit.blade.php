@@ -42,7 +42,7 @@
                       </div>
                       <div class="product-tab-content">
                         <h6>Home</h6>
-                        <p>Edit Product  details</p>
+                        <p>Edit Product details</p>
                       </div>
                     </a></li>
                 </ul>
@@ -157,6 +157,21 @@
                             </div>
                           </div>
                         </div>
+                        @php
+    $specification_product = json_decode($product->specifications, true);
+@endphp
+
+<!-- Specifications Section -->
+@foreach ($specSections as $section => $fields)
+    <h3>{{ $section }}</h3>
+    @foreach ($fields as $field)
+        <div class="form-group">
+            <label for="specifications[{{ $section }}][{{ $field }}]">{{ $field }}</label>
+            <input type="text" class="form-control" id="specifications[{{ $section }}][{{ $field }}]" name="specifications[{{ $section }}][{{ $field }}]" value="{{ old('specifications.'.$section.'.'.$field, $specification_product[$section][$field] ?? '') }}">
+        </div>
+    @endforeach
+@endforeach
+
                         <div class="row g-lg-4 g-3">
                           <div class="col-12">
                             <div class="row g-3">
@@ -216,8 +231,7 @@
         speaker: ['JBL', 'Bose', 'Sony']
     };
 
-    const iphoneModels = ['iPhone Pro', 'iPhone Max', 'iPhone Air'];
-
+    const iphoneModels = ['Pro', 'Max', 'Air'];
     $('#validationDefault04').on('change', function() {
         const selectedCategory = $(this).val();
         let productOptions = '<option selected="" value="">Please select</option>';

@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::get('/', [FrontController::class, 'home'])->name('home');
  Route::get('/product-detail/{id}', [FrontController::class, 'productDetails'])->name('product.details');
  Route::get('/category/{type}', [FrontController::class, 'category'])->name('category');
+ Route::get('/compare', [FrontController::class, 'compare'])->name('compare');
+ Route::post('/fetch-product', [FrontController::class, 'fetchproduct'])->name('fetchproduct');
 
 // Route::get('/send-msg-request', [ApiController::class, 'sendSMS']);
 
